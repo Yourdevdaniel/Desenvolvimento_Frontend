@@ -1,0 +1,396 @@
+/* ==========================================================================
+   Quadro de Tarefas Acadêmicas — E2
+   CSS mobile-first: a base é a tela estreita. Nenhuma media query max-width.
+   ========================================================================== */
+
+/* --- Sistema de design ---------------------------------------------------- */
+
+:root {
+  /* superfícies, texto e borda — tema azul claro com verde água.
+     Nenhuma superfície é branco puro e nenhum texto é preto puro. */
+  --superficie: #e1f4fb;
+  --superficie-alt: #edf9f5;
+  --fundo: #bfe3f0;
+  --texto: #0b3a44;
+  --texto-suave: #2f5f6b;
+  --borda: #8ec9dd;
+
+  /* uma cor por status: traço de destaque + fundo da coluna */
+  --status-a-fazer: #2f6f8f;
+  --status-a-fazer-fundo: #d6ecf6;
+  --status-em-andamento: #0a6ea8;
+  --status-em-andamento-fundo: #cfe9f7;
+  --status-em-revisao: #0e8a8f;
+  --status-em-revisao-fundo: #d2f0ee;
+  --status-concluida: #12805a;
+  --status-concluida-fundo: #d5f0e3;
+
+  /* prioridades */
+  --prioridade-alta-texto: #9c2a20;
+  --prioridade-alta-fundo: #fbe3e0;
+  --prioridade-media-texto: #7a4a00;
+  --prioridade-media-fundo: #fbedd3;
+  --prioridade-baixa-texto: #0f6b4d;
+  --prioridade-baixa-fundo: #cdeee0;
+
+  /* escala de espaçamento */
+  --e-1: 0.5rem;
+  --e-2: 1rem;
+  --e-3: 1.5rem;
+  --e-4: 2.5rem;
+
+  /* raio de canto */
+  --raio: 0.5rem;
+
+  /* foco */
+  --cor-foco: #0b5fbf;
+}
+
+/* --- Base ----------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--fundo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  line-height: 1.25;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Foco visível em tudo que recebe Tab. O contorno padrão não foi removido em
+   nenhum lugar; aqui ele é apenas reforçado. */
+:focus-visible {
+  outline: 3px solid var(--cor-foco);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+/* --- Cabeçalho e rodapé --------------------------------------------------- */
+
+.cabecalho {
+  background-image: linear-gradient(120deg, var(--status-em-andamento-fundo), var(--status-em-revisao-fundo));
+  border-bottom: 1px solid var(--borda);
+  padding: var(--e-3) var(--e-2);
+}
+
+.cabecalho__titulo {
+  /* tipografia fluida: cresce com a viewport sem ignorar o rem do usuário */
+  font-size: clamp(1.5rem, 1.15rem + 1.8vw, 2.25rem);
+}
+
+.rodape {
+  border-top: 1px solid var(--borda);
+  padding: var(--e-3) var(--e-2);
+  color: var(--texto-suave);
+  font-size: 0.875rem;
+}
+
+/* --- Estrutura da página -------------------------------------------------- */
+
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-4);
+  max-width: 90rem;
+  margin-inline: auto;
+  padding: var(--e-3) clamp(0.75rem, 0.25rem + 2vw, 2rem);
+}
+
+.conteudo h2 {
+  font-size: 1.25rem;
+  margin-bottom: var(--e-2);
+}
+
+/* --- Busca e filtros ------------------------------------------------------ */
+
+.painel {
+  background-color: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: var(--e-3);
+}
+
+.filtros {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-3);
+}
+
+.filtros__busca {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-1);
+}
+
+.filtros__busca input {
+  width: 100%;
+  min-width: 0;
+  padding: 0.5rem 0.75rem;
+  font: inherit;
+  color: var(--texto);
+  background-color: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+}
+
+.grupo {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: var(--e-1);
+  margin: 0;
+  padding: var(--e-2);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+}
+
+.grupo legend {
+  padding-inline: var(--e-1);
+  font-weight: 700;
+}
+
+.opcao {
+  display: flex;
+  align-items: center;
+  gap: var(--e-1);
+}
+
+/* Alvo de clique de 24 x 24 px CSS no mínimo. */
+.opcao input[type="radio"] {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0;
+  accent-color: var(--status-em-andamento);
+}
+
+.opcao label {
+  display: flex;
+  align-items: center;
+  min-height: 1.5rem;
+}
+
+.filtros__acao {
+  display: flex;
+}
+
+.botao {
+  min-height: 2.75rem;
+  padding: 0.625rem var(--e-3);
+  font: inherit;
+  font-weight: 600;
+  color: var(--superficie);
+  background-color: var(--status-em-andamento);
+  border: 1px solid transparent;
+  border-radius: var(--raio);
+  cursor: pointer;
+}
+
+/* --- Quadro (Grid) -------------------------------------------------------- */
+
+.quadro {
+  display: grid;
+  /* base: coluna única empilhada. minmax(0, 1fr) impede que um cartão largo
+     force a grade a estourar a viewport. */
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--e-2);
+}
+
+/* --- Colunas (Flexbox vertical) ------------------------------------------- */
+
+.coluna {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-2);
+  min-width: 0;
+  padding: var(--e-2);
+  background-color: var(--cor-status-fundo);
+  border: 1px solid var(--borda);
+  border-top: 4px solid var(--cor-status);
+  border-radius: var(--raio);
+}
+
+/* A cor de cada status é declarada uma única vez, na propriedade
+   personalizada local que a regra acima consome. */
+.coluna--a-fazer {
+  --cor-status: var(--status-a-fazer);
+  --cor-status-fundo: var(--status-a-fazer-fundo);
+}
+
+.coluna--em-andamento {
+  --cor-status: var(--status-em-andamento);
+  --cor-status-fundo: var(--status-em-andamento-fundo);
+}
+
+.coluna--em-revisao {
+  --cor-status: var(--status-em-revisao);
+  --cor-status-fundo: var(--status-em-revisao-fundo);
+}
+
+.coluna--concluida {
+  --cor-status: var(--status-concluida);
+  --cor-status-fundo: var(--status-concluida-fundo);
+}
+
+.coluna__titulo {
+  font-size: 1.0625rem;
+  padding-bottom: var(--e-1);
+  border-bottom: 2px solid var(--cor-status);
+}
+
+.coluna__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-2);
+  min-width: 0;
+}
+
+.coluna__lista > li {
+  display: flex;
+  min-width: 0;
+}
+
+/* --- Cartão (Flexbox) ----------------------------------------------------- */
+
+.cartao {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--e-1);
+  min-width: 0;
+  padding: var(--e-2);
+  background-color: var(--superficie-alt);
+  border: 1px solid var(--borda);
+  border-left: 4px solid var(--cor-status);
+  border-radius: var(--raio);
+}
+
+.cartao__topo {
+  display: flex;
+  align-items: baseline;
+  gap: var(--e-1);
+  min-width: 0;
+}
+
+/* O título ocupa o espaço livre da linha; min-width: 0 é o que permite ao item
+   flex encolher abaixo do seu conteúdo e, com isso, truncar de fato. */
+.cartao__titulo {
+  flex: 1;
+  min-width: 0;
+  font-size: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.etiqueta {
+  flex: none;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 999px;
+  color: var(--etiqueta-texto);
+  background-color: var(--etiqueta-fundo);
+}
+
+.etiqueta--alta {
+  --etiqueta-texto: var(--prioridade-alta-texto);
+  --etiqueta-fundo: var(--prioridade-alta-fundo);
+}
+
+.etiqueta--media {
+  --etiqueta-texto: var(--prioridade-media-texto);
+  --etiqueta-fundo: var(--prioridade-media-fundo);
+}
+
+.etiqueta--baixa {
+  --etiqueta-texto: var(--prioridade-baixa-texto);
+  --etiqueta-fundo: var(--prioridade-baixa-fundo);
+}
+
+.cartao__meta {
+  font-size: 0.875rem;
+  color: var(--texto-suave);
+  overflow-wrap: break-word;
+}
+
+/* O prazo é empurrado para a base do cartão. */
+.cartao__prazo {
+  margin-top: auto;
+  padding-top: var(--e-1);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-top: 1px dashed var(--borda);
+}
+
+/* ==========================================================================
+   Pontos de quebra — obtidos arrastando a janela, não de tabela de dispositivos
+   ========================================================================== */
+
+/* 40rem (640px): abaixo disso, dois fieldsets lado a lado espremem os rótulos
+   longos ("Todos os status", "Todas as prioridades") em duas linhas, e duas
+   colunas de cartão deixam menos de 15rem para o título, que passa a truncar
+   já nas primeiras palavras. A partir daqui os dois cabem. */
+@media (min-width: 40rem) {
+  .filtros {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .filtros__busca,
+  .filtros__acao {
+    grid-column: 1 / -1;
+  }
+
+  .quadro {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 70rem (1120px): é onde as quatro colunas de status passam a caber lado a lado
+   com pelo menos ~16rem úteis cada uma. Abaixo disso, quatro colunas cortariam
+   o título de quase todo cartão logo na primeira ou segunda palavra. */
+@media (min-width: 70rem) {
+  .quadro {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--e-3);
+  }
+
+  .filtros {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .filtros__busca {
+    grid-column: auto;
+  }
+
+  .filtros__acao {
+    grid-column: 1 / -1;
+  }
+}
