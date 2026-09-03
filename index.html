@@ -68,6 +68,9 @@
         <p class="filtros__acao">
           <button type="submit" class="botao">Aplicar busca e filtros</button>
         </p>
+        <p class="filtros__acao">
+          <button type="submit" class="botao" onclick="carregarTarefas()">Aplicar json</button>
+        </p>
       </form>
     </section>
 
@@ -77,135 +80,25 @@
       <div class="quadro">
         <section class="coluna coluna--a-fazer" aria-labelledby="coluna-a-fazer">
           <h3 class="coluna__titulo" id="coluna-a-fazer">A fazer</h3>
-          <ul class="coluna__lista">
-            <li>
-              <article class="cartao">
-                <div class="cartao__topo">
-                  <h4 class="cartao__titulo">Levantar requisitos do quadro de tarefas acadêmicas</h4>
-                  <p class="etiqueta etiqueta--alta">Prioridade: Alta</p>
-                </div>
-                <p class="cartao__meta">Projeto: Gerenciador de Tarefas Acadêmicas</p>
-                <p class="cartao__meta">Responsável: Lucas Oliveira</p>
-                <p class="cartao__prazo">Prazo: 18/08/2026</p>
-              </article>
-            </li>
-            <li>
-              <article class="cartao">
-                <div class="cartao__topo">
-                  <h4 class="cartao__titulo">Escrever roteiro de testes de acessibilidade</h4>
-                  <p class="etiqueta etiqueta--media">Prioridade: Média</p>
-                </div>
-                <p class="cartao__meta">Projeto: Gerenciador de Tarefas Acadêmicas</p>
-                <p class="cartao__meta">Responsável: Gustavo Barros</p>
-                <p class="cartao__prazo">Prazo: 20/08/2026</p>
-              </article>
-            </li>
-            <li>
-              <article class="cartao">
-                <div class="cartao__topo">
-                  <h4 class="cartao__titulo">Catalogar referências bibliográficas do relatório final</h4>
-                  <p class="etiqueta etiqueta--baixa">Prioridade: Baixa</p>
-                </div>
-                <p class="cartao__meta">Projeto: Seminário de Interação Humano-Computador</p>
-                <p class="cartao__meta">Responsável: Rodrigo Goes</p>
-                <p class="cartao__prazo">Prazo: 02/09/2026</p>
-              </article>
-            </li>
+          <ul class="coluna__lista" id="listaFazer">
           </ul>
         </section>
 
         <section class="coluna coluna--em-andamento" aria-labelledby="coluna-em-andamento">
           <h3 class="coluna__titulo" id="coluna-em-andamento">Em andamento</h3>
-          <ul class="coluna__lista">
-            <li>
-              <article class="cartao">
-                <div class="cartao__topo">
-                  <h4 class="cartao__titulo">Marcar a estrutura semântica da página inicial</h4>
-                  <p class="etiqueta etiqueta--alta">Prioridade: Alta</p>
-                </div>
-                <p class="cartao__meta">Projeto: Gerenciador de Tarefas Acadêmicas</p>
-                <p class="cartao__meta">Responsável: Heitor Guanabara</p>
-                <p class="cartao__prazo">Prazo: 11/08/2026</p>
-              </article>
-            </li>
-            <li>
-              <article class="cartao">
-                <div class="cartao__topo">
-                  <h4 class="cartao__titulo">Modelar as entidades Projeto e Tarefa</h4>
-                  <p class="etiqueta etiqueta--media">Prioridade: Média</p>
-                </div>
-                <p class="cartao__meta">Projeto: Gerenciador de Tarefas Acadêmicas</p>
-                <p class="cartao__meta">Responsável: Carla Menezes</p>
-                <p class="cartao__prazo">Prazo: 25/08/2026</p>
-              </article>
-            </li>
-            <li>
-              <article class="cartao">
-                <div class="cartao__topo">
-                  <h4 class="cartao__titulo">Preparar slides da apresentação parcial</h4>
-                  <p class="etiqueta etiqueta--baixa">Prioridade: Baixa</p>
-                </div>
-                <p class="cartao__meta">Projeto: Seminário de Interação Humano-Computador</p>
-                <p class="cartao__meta">Responsável: Marina Alves</p>
-                <p class="cartao__prazo">Prazo: 28/08/2026</p>
-              </article>
-            </li>
+          <ul class="coluna__lista" id="listaAndamento">
           </ul>
         </section>
 
         <section class="coluna coluna--em-revisao" aria-labelledby="coluna-em-revisao">
           <h3 class="coluna__titulo" id="coluna-em-revisao">Em revisão</h3>
-          <ul class="coluna__lista">
-            <li>
-              <article class="cartao">
-                <div class="cartao__topo">
-                  <h4 class="cartao__titulo">Revisar hierarquia de cabeçalhos da interface</h4>
-                  <p class="etiqueta etiqueta--alta">Prioridade: Alta</p>
-                </div>
-                <p class="cartao__meta">Projeto: Gerenciador de Tarefas Acadêmicas</p>
-                <p class="cartao__meta">Responsável: Pablo Cesar</p>
-                <p class="cartao__prazo">Prazo: 12/08/2026</p>
-              </article>
-            </li>
-            <li>
-              <article class="cartao">
-                <div class="cartao__topo">
-                  <h4 class="cartao__titulo">Conferir rótulos dos campos de filtro</h4>
-                  <p class="etiqueta etiqueta--media">Prioridade: Média</p>
-                </div>
-                <p class="cartao__meta">Projeto: Gerenciador de Tarefas Acadêmicas</p>
-                <p class="cartao__meta">Responsável: Carla Menezes</p>
-                <p class="cartao__prazo">Prazo: 13/08/2026</p>
-              </article>
-            </li>
+          <ul class="coluna__lista" id="listaRevisao">
           </ul>
         </section>
 
         <section class="coluna coluna--concluida" aria-labelledby="coluna-concluida">
           <h3 class="coluna__titulo" id="coluna-concluida">Concluída</h3>
-          <ul class="coluna__lista">
-            <li>
-              <article class="cartao">
-                <div class="cartao__topo">
-                  <h4 class="cartao__titulo">Criar o repositório da disciplina</h4>
-                  <p class="etiqueta etiqueta--alta">Prioridade: Alta</p>
-                </div>
-                <p class="cartao__meta">Projeto: Gerenciador de Tarefas Acadêmicas</p>
-                <p class="cartao__meta">Responsável: Roberto Carlos</p>
-                <p class="cartao__prazo">Prazo: 05/08/2026</p>
-              </article>
-            </li>
-            <li>
-              <article class="cartao">
-                <div class="cartao__topo">
-                  <h4 class="cartao__titulo">Definir os status e prioridades do quadro</h4>
-                  <p class="etiqueta etiqueta--baixa">Prioridade: Baixa</p>
-                </div>
-                <p class="cartao__meta">Projeto: Gerenciador de Tarefas Acadêmicas</p>
-                <p class="cartao__meta">Responsável: Marina Alves</p>
-                <p class="cartao__prazo">Prazo: 07/08/2026</p>
-              </article>
-            </li>
+          <ul class="coluna__lista" id="listaConcluida">
           </ul>
         </section>
       </div>
@@ -215,5 +108,6 @@
   <footer class="rodape">
     <p>Daniel Bernardes — Desenvolvimento Frontend, 2026.2</p>
   </footer>
+  <script src="js/api.js"></script>
 </body>
 </html>

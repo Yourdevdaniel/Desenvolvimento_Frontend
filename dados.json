@@ -1,0 +1,32 @@
+{
+  "tarefas": [
+    {
+      "id": "t1",
+      "titulo": "Revisar critérios da E3",
+      "status": "a-fazer",
+      "prioridade": "alta",
+      "prazo": "2026-09-08"
+    },
+    {
+      "id": "t2",
+      "titulo": "Revisar critérios da E2",
+      "status": "a-fazer",
+      "prioridade": "alta",
+      "prazo": "2026-08-28"
+    },
+    {
+      "id": "t3",
+      "titulo": "Implementar cartões por dados",
+      "status": "em-andamento",
+      "prioridade": "media",
+      "prazo": "2026-09-01"
+    },
+    {
+      "id": "t4",
+      "titulo": "Testar navegação por teclado",
+      "status": "em-revisao",
+      "prioridade": "alta",
+      "prazo": "2026-09-02"
+    }
+  ]
+}
