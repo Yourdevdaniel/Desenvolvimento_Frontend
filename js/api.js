@@ -1,4 +1,4 @@
-export async function carregarTarefas() {
+async function carregarTarefas() {
   const resposta = await fetch("./dados.json");
 
   if (!resposta.ok) {
