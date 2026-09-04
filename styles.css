@@ -350,17 +350,15 @@ ul {
 }
 
 .etiqueta {
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  padding: 0.2rem 0.65rem;
-  font-size: 0.75rem;
+  flex: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  line-height: 1.4;
-  border-radius: 999px;
+  border-radius: 0.35rem;
   color: var(--etiqueta-texto);
   background-color: var(--etiqueta-fundo);
 }
+
 
 .etiqueta--alta {
   --etiqueta-texto: var(--prioridade-alta-texto);
@@ -376,6 +374,7 @@ ul {
   --etiqueta-texto: var(--prioridade-baixa-texto);
   --etiqueta-fundo: var(--prioridade-baixa-fundo);
 }
+  
 
 
 /* ==========================================================================
