@@ -27,6 +27,62 @@
       "status": "em-revisao",
       "prioridade": "alta",
       "prazo": "2026-09-02"
+    },
+    {
+      "id": "t5",
+      "titulo": "Criar formulário de nova tarefa",
+      "status": "a-fazer",
+      "prioridade": "media",
+      "prazo": "2026-09-10"
+    },
+    {
+      "id": "t6",
+      "titulo": "Adicionar filtro por prioridade",
+      "status": "a-fazer",
+      "prioridade": "baixa",
+      "prazo": "2026-09-15"
+    },
+    {
+      "id": "t7",
+      "titulo": "Corrigir bug no delete de tarefa",
+      "status": "em-andamento",
+      "prioridade": "alta",
+      "prazo": "2026-09-05"
+    },
+    {
+      "id": "t8",
+      "titulo": "Responsivizar layout mobile",
+      "status": "a-fazer",
+      "prioridade": "media",
+      "prazo": "2026-09-12"
+    },
+    {
+      "id": "t9",
+      "titulo": "Adicionar localStorage para persistência",
+      "status": "em-revisao",
+      "prioridade": "media",
+      "prazo": "2026-09-03"
+    },
+    {
+      "id": "t10",
+      "titulo": "Escrever documentação da API",
+      "status": "concluido",
+      "prioridade": "baixa",
+      "prazo": "2026-08-30"
+    },
+    {
+      "id": "t11",
+      "titulo": "Implementar ordenação por prazo",
+      "status": "a-fazer",
+      "prioridade": "baixa",
+      "prazo": "2026-09-18"
+    },
+    {
+      "id": "t12",
+      "titulo": "Adicionar dark mode",
+      "status": "em-andamento",
+      "prioridade": "baixa",
+      "prazo": "2026-09-20"
     }
   ]
-}
+}   
