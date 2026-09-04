@@ -349,6 +349,35 @@ ul {
   border-top: 1px dashed var(--borda);
 }
 
+.etiqueta {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.4;
+  border-radius: 999px;
+  color: var(--etiqueta-texto);
+  background-color: var(--etiqueta-fundo);
+}
+
+.etiqueta--alta {
+  --etiqueta-texto: var(--prioridade-alta-texto);
+  --etiqueta-fundo: var(--prioridade-alta-fundo);
+}
+
+.etiqueta--media {
+  --etiqueta-texto: var(--prioridade-media-texto);
+  --etiqueta-fundo: var(--prioridade-media-fundo);
+}
+
+.etiqueta--baixa {
+  --etiqueta-texto: var(--prioridade-baixa-texto);
+  --etiqueta-fundo: var(--prioridade-baixa-fundo);
+}
+
+
 /* ==========================================================================
    Pontos de quebra — obtidos arrastando a janela, não de tabela de dispositivos
    ========================================================================== */
