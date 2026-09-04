@@ -12,6 +12,7 @@
   </header>
 
   <main class="conteudo">
+    <div id="status" role="status" aria-live="polite"></div>
     <section class="painel" aria-labelledby="titulo-busca">
       <h2 id="titulo-busca">Busca e filtros</h2>
 
@@ -74,28 +75,28 @@
     <section class="quadro-secao" aria-labelledby="titulo-quadro">
       <h2 id="titulo-quadro">Quadro de tarefas</h2>
 
-      <div class="quadro">
+      <div class="quadro" data-quadro>
         <section class="coluna coluna--a-fazer" aria-labelledby="coluna-a-fazer">
           <h3 class="coluna__titulo" id="coluna-a-fazer">A fazer</h3>
-          <ul class="coluna__lista" id="listaFazer">
+          <ul class="coluna__lista" id="listaFazer" data-lista-status="a-fazer">
           </ul>
         </section>
 
         <section class="coluna coluna--em-andamento" aria-labelledby="coluna-em-andamento">
           <h3 class="coluna__titulo" id="coluna-em-andamento">Em andamento</h3>
-          <ul class="coluna__lista" id="listaAndamento">
+          <ul class="coluna__lista" id="listaAndamento" data-lista-status="em-andamento">
           </ul>
         </section>
 
         <section class="coluna coluna--em-revisao" aria-labelledby="coluna-em-revisao">
           <h3 class="coluna__titulo" id="coluna-em-revisao">Em revisão</h3>
-          <ul class="coluna__lista" id="listaRevisao">
+          <ul class="coluna__lista" id="listaRevisao" data-lista-status="em-revisao">
           </ul>
         </section>
 
         <section class="coluna coluna--concluida" aria-labelledby="coluna-concluida">
           <h3 class="coluna__titulo" id="coluna-concluida">Concluída</h3>
-          <ul class="coluna__lista" id="listaConcluida">
+          <ul class="coluna__lista" id="listaConcluida" data-lista-status="concluida">
           </ul>
         </section>
       </div>
@@ -105,6 +106,6 @@
   <footer class="rodape">
     <p>Daniel Bernardes — Desenvolvimento Frontend, 2026.2</p>
   </footer>
-  <script src="js/api.js"></script>
+  <script src="js/app.js" type="module"></script>
 </body>
 </html>

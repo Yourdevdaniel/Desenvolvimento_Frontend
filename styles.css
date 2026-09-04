@@ -307,6 +307,18 @@ ul {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cartao__titulo:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 .etiqueta {
