@@ -57,13 +57,13 @@ export function renderizarTarefas(tarefas, quadro) {
   });
 }
 
-export function instalarEventosDoQuadro(quadro, tarefas) {
+export function instalarEventosDoQuadro(quadro, obterTarefas) {
   quadro.addEventListener('click', (evento) => {
     if (!(evento.target instanceof Element)) return;
     const botao = evento.target.closest('button[data-acao="ver-detalhes"]');
     if (!botao || !quadro.contains(botao)) return;
     const cartao = botao.closest('[data-tarefa-id]');
-    const tarefa = tarefas.find((item) => item.id === cartao?.dataset.tarefaId);
+    const tarefa = obterTarefas().find((item) => item.id === cartao?.dataset.tarefaId);
     if (!tarefa) return;
     console.log('Detalhes da tarefa:', tarefa);
   });

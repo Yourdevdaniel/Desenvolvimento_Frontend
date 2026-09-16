@@ -66,8 +66,16 @@
           </p>
         </fieldset>
 
+        <p class="filtros__ordenacao">
+          <label for="campo-ordenacao">Ordenar por prazo</label>
+          <select id="campo-ordenacao" name="ordenacao">
+            <option value="prazo-asc" selected>Prazo mais próximo primeiro</option>
+            <option value="prazo-desc">Prazo mais distante primeiro</option>
+          </select>
+        </p>
+
         <p class="filtros__acao">
-          <button type="submit" class="botao">Aplicar busca e filtros</button>
+          <button type="button" class="botao" data-limpar>Limpar filtros</button>
         </p>
       </form>
     </section>

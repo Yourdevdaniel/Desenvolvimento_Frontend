@@ -196,6 +196,24 @@ ul {
   min-height: 1.5rem;
 }
 
+.filtros__ordenacao {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-1);
+}
+
+.filtros__ordenacao select {
+  width: 100%;
+  min-width: 0;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  font: inherit;
+  color: var(--texto);
+  background-color: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+}
+
 .filtros__acao {
   display: flex;
 }
@@ -404,6 +422,7 @@ ul {
   }
 
   .filtros__busca,
+  .filtros__ordenacao,
   .filtros__acao {
     grid-column: 1 / -1;
   }
@@ -431,6 +450,7 @@ ul {
     grid-column: auto;
   }
 
+  .filtros__ordenacao,
   .filtros__acao {
     grid-column: 1 / -1;
   }
